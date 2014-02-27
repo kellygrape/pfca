@@ -12,7 +12,9 @@
       <ul>
         <?php if(get_field('member_journalism_alias')): ?><li><strong>Journalism Alias</strong> <?php the_field('member_journalism_alias'); ?></li><?php endif; ?>
         <li><strong>Podcast</strong> ________</li>
-        <li><?php $post_object = get_field('member_podcast'); print_r($post_object); ?>
+        
+        <li><?php $post_object = get_field('member_podcast'); print_r($post_object); ?></li>
+        <li><?php $podcastID = $post_object->ID; echo $podcastID; ?></li>
         <?php if(get_field('member_title')): ?><li><strong>Title</strong> <?php the_field('member_title'); ?></li><?php endif; ?>
       </ul>
       <?php the_content(); ?>
