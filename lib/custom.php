@@ -20,6 +20,12 @@ function pfca_member() {
 		'not_found'           => __( 'Not found', 'text_domain' ),
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
 	);
+    $rewrite = array(
+		'slug'                => 'member',
+		'with_front'          => true,
+		'pages'               => true,
+		'feeds'               => true,
+	);
 	$args = array(
 		'label'               => __( 'pfca_member', 'text_domain' ),
 		'description'         => __( 'Voting members of the website.', 'text_domain' ),
@@ -39,6 +45,7 @@ function pfca_member() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
+        'rewrite'             => $rewrite,
 	);
 	register_post_type( 'pfca_member', $args );
 
@@ -65,6 +72,12 @@ function pfca_podcast() {
 		'not_found'           => __( 'Not found', 'text_domain' ),
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
 	);
+    $rewrite = array(
+		'slug'                => 'podcast',
+		'with_front'          => true,
+		'pages'               => true,
+		'feeds'               => true,
+	);
 	$args = array(
 		'label'               => __( 'pfca_podcast', 'text_domain' ),
 		'description'         => __( 'Podcasts that the members belong to', 'text_domain' ),
@@ -84,6 +97,7 @@ function pfca_podcast() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
+        'rewrite'             => $rewrite
 	);
 	register_post_type( 'pfca_podcast', $args );
 
