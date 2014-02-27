@@ -1,7 +1,7 @@
 <?php if ( 'podcast' == get_post_type() ): ?>
 <?php get_template_part('templates/content', 'podcast'); ?>
 
-<?php elseif ( 'member' == get_post_type() ):: ?>
+<?php elseif ( 'member' == get_post_type() ): ?>
 <?php get_template_part('templates/content', 'podcast'); ?>
 
 <?php else: ?>
