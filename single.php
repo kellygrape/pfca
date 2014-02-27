@@ -1,3 +1,5 @@
+<h1><?php echo get_post_type();?></h1>
+
 <?php if ( 'pfca_podcast' == get_post_type() ): ?>
 <?php get_template_part('templates/content', 'podcast'); ?>
 
