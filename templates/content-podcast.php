@@ -24,7 +24,7 @@
               'meta_query'		=> array(
                   array(
                       'key' => 'member_podcast',
-                      'value' =>  '"'.get_the_ID().'"',
+                      'value' =>  get_the_ID(),
                       'compare' => 'LIKE'
                       )
                 )
@@ -32,7 +32,7 @@
             
             $postslist = get_posts( $args );
             foreach($postslist as $member){
-              print_r($member);
+              ?><li><a href="<?php echo get_permalink($member->ID) ?>"><?php echo get_the_title($member->ID);?></a></li><?php
             }
       ?>
       <?php the_content(); ?>
