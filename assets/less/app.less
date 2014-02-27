@@ -4,11 +4,15 @@
 
 @import "bootstrap/bootstrap.less";
 
+@footercolor: #333;
+@footertextcolor: #ddd;
 /* ==========================================================================
    Base
    ========================================================================== */
 
-body { }
+body { 
+  background: url(../img/diagmonds/diagmonds.png) repeat;
+}
 
 
 
@@ -16,15 +20,51 @@ body { }
    Header
    ========================================================================== */
 
-.banner { }
 
+.banner { 
+  background: url(../img/brushed/brushed.png) repeat;
+  .navbar-nav {
+    text-align: center;
+    float: none;
+    >li a{
+      color:white;
+      font-weight:bold;
+    }
+  }
+}
 
+.navbar{
+  margin-bottom:0px;
+  border-radius:0;
+  &-inverse{
+    border-bottom:0px;
+
+  }
+}
+.logo{
+  margin: 0px auto;
+  width: 20%;
+  img{
+    .img-responsive();
+  }
+}
+
+.navbar-area{
+  margin-left: -25px;
+  margin-right: -25px;
+  background-color:#666;
+  border-bottom:3px solid @brand-primary;
+}
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
-.content { }
+.content { 
+  background-color:white;
+  padding-top:20px;
+  padding-bottom:60px;
+}
 
 
 
@@ -62,8 +102,70 @@ body { }
 /* ==========================================================================
    Footer
    ========================================================================== */
+.widget{
+  padding-top:5px;
+  margin-top:10px;
+  margin-bottom:10px;
 
-.content-info { }
+  h3{
+    margin-top:5px;
+    font-family: @font-family-sans-serif;
+    font-size:1.1em;
+    text-transform:uppercase;
+    font-weight:bold;
+    background: url('../img/wg_pixel_dividers/images/divider2.png') repeat-x center;
+    span{
+      background:white;
+      padding-right:5px;
+    }
+  }
+  
+}
+.social-widget{
+  margin-top:10px;
+  a{
+    display:block;
+    background-color:lighten(@footercolor,40%);
+    color:@footercolor;
+    border-radius: 0;
+  }
+  .nav-pills>li>a{
+    border-radius: 0;
+    margin-right:5px;
+  }
+}
+
+.widget_nav_menu{
+  ul{
+    .nav();
+    >li>a{
+      padding: 5px;
+    }
+    li{border-top:1px solid lighten(@footercolor,40%);}
+  }
+}
+
+.footer-widgets{
+  border-top: 10px solid lighten(@footercolor,40%);
+  background: lighten(@footercolor, 10%);
+  color: @footertextcolor;
+  padding: 40px;
+  h3{
+    color:white;
+  }
+  .widget h3{
+    color: white;
+    span{
+      background:lighten(@footercolor, 10%);
+    }
+  }
+}
+footer { 
+  background: darken(@brand-primary,20%);
+  color: @footertextcolor;
+  padding: 10px;
+  p{margin: 0;}
+}
 
 
 
