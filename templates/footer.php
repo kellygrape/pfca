@@ -5,7 +5,7 @@
       <div class="col-md-4"><?php dynamic_sidebar('footer-right'); ?></div>
     </div>
 </div>
-<footer role="contentinfo">
+<footer class="site-footer" role="contentinfo">
   <div class="content-info container">
   <div class="row">
     <div class="col-lg-12">
