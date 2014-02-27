@@ -11,13 +11,14 @@
       <p><?php the_field('podcast_tagline'); ?></p>
       <h3>Podcast Information</h3>
       <ul>
-        <li><strong>Year of First Broadcast</strong></li>
-        <li><strong>Email Address</strong></li>
+        <?php if(get_field('podcast_first_broadcast'): ?><li><strong>Year of First Broadcast</strong> <?php the_field('podcast_first_broadcast'); ?></li><?php endif; ?>
+        <?php if(get_field('podcast_email'): ?><li><strong>Email Address</strong> <?php the_field('podcast_email'); ?></li><?php endif; ?>
       </ul>
       <h3>Podcast Links</h3>
-      <a class="zocial itunes" href="<?php the_field('podcast_itunes');?>">iTunes Link</a>
-      <a class="zocial twitter" href="http://www.twitter.com/<?php the_field('podcast_twitter');?>">Twitter</a>
-      <a class="zocial facebook" href="<?php the_field('podcast_facebook');?>">Facebook Link</a>
+      <?php if(get_field('podcast_itunes'): ?><a class="zocial itunes" href="<?php the_field('podcast_itunes');?>">iTunes Link</a><br /><?php endif; ?>
+      <?php if(get_field('podcast_twitter'): ?><a class="zocial twitter" href="http://www.twitter.com/<?php the_field('podcast_twitter');?>">Twitter</a><br /><?php endif; ?>
+      <?php if(get_field('podcast_facebook'): ?><a class="zocial facebook" href="<?php the_field('podcast_facebook');?>">Facebook Link</a><br /><?php endif; ?>
+      <?php if(get_field('podcast_rss_feed'): ?><a class="zocial rss" href="<?php the_field('podcast_rss_feed');?>">RSS Feed</a><br /><?php endif; ?>
       <?php the_content(); ?>
       <?php $my_post_meta = get_post_meta($post->ID); 
             print_r($my_post_meta);
