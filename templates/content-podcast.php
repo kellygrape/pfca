@@ -19,9 +19,6 @@
       <?php if(get_field('podcast_itunes')): ?><a class="zocial itunes" href="<?php the_field('podcast_itunes');?>">iTunes Link</a><?php endif; ?>
       <?php if(get_field('podcast_rss_feed')): ?><a class="zocial rss" href="<?php the_field('podcast_rss_feed');?>">RSS Feed</a><br /><?php endif; ?>
       <?php the_content(); ?>
-      <?php $my_post_meta = get_post_meta($post->ID); 
-            print_r($my_post_meta);
-      ?>
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>

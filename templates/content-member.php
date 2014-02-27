@@ -14,6 +14,7 @@
         <li><strong>Podcast</strong> ________</li>
         <?php if(get_field('member_title')): ?><li><strong>Title</strong> <?php the_field('member_title'); ?></li><?php endif; ?>
       </ul>
+      <?php the_content(); ?>
       <h3>Member Links</h3>
       <?php if(get_field('member_twitter')): ?>
         <a class="zocial twitter" href="http://www.twitter.com/<?php the_field('member_twitter');?>">Twitter</a>
@@ -21,10 +22,7 @@
       <?php if(get_field('member_facebook')): ?>
         <a class="zocial facebook" href="<?php the_field('member_facebook');?>">Facebook Link</a>
       <?php endif; ?>
-      <?php the_content(); ?>
-      <?php $my_post_meta = get_post_meta($post->ID); 
-            print_r($my_post_meta);
-      ?>
+      
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
