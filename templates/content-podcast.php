@@ -24,14 +24,14 @@
               'meta_query'		=> array(
                   array(
                       'key' => 'member_podcast',
-                      'value' => '"' . get_the_ID() . '"',
+                      'value' =>  '"'.get_the_ID().'"',
                       'compare' => 'LIKE'
                       )
                 )
             );
             
             $postslist = get_posts( $args );
-            foreach($postlist as $member){
+            foreach($postslist as $member){
               print_r($member);
             }
       ?>
