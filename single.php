@@ -2,7 +2,7 @@
 <?php get_template_part('templates/content', 'podcast'); ?>
 
 <?php elseif ( 'pfca_member' == get_post_type() ): ?>
-<?php get_template_part('templates/content', 'podcast'); ?>
+<?php get_template_part('templates/content', 'member'); ?>
 
 <?php else: ?>
 <?php get_template_part('templates/content', 'single'); ?>
