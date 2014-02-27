@@ -14,11 +14,12 @@
         <?php if(get_field('podcast_email')): ?><li><strong>Email Address</strong> <?php the_field('podcast_email'); ?></li><?php endif; ?>
       </ul>
       <h3>Podcast Links</h3>
-      <?php if(get_field('podcast_twitter')): ?><a class="zocial twitter" href="http://www.twitter.com/<?php the_field('podcast_twitter');?>">Twitter</a><?php endif; ?>
-      <?php if(get_field('podcast_facebook')): ?><a class="zocial facebook" href="<?php the_field('podcast_facebook');?>">Facebook Link</a><br /><?php endif; ?>
-      <?php if(get_field('podcast_itunes')): ?><a class="zocial itunes" href="<?php the_field('podcast_itunes');?>">iTunes Link</a><?php endif; ?>
-      <?php if(get_field('podcast_rss_feed')): ?><a class="zocial rss" href="<?php the_field('podcast_rss_feed');?>">RSS Feed</a><br /><?php endif; ?>
+      <?php if(get_field('podcast_twitter')): ?><a class="zocial twitter icon" href="http://www.twitter.com/<?php the_field('podcast_twitter');?>">Twitter</a><?php endif; ?>
+      <?php if(get_field('podcast_facebook')): ?><a class="zocial facebook icon" href="<?php the_field('podcast_facebook');?>">Facebook Link</a><?php endif; ?>
+      <?php if(get_field('podcast_itunes')): ?><a class="zocial itunes icon" href="<?php the_field('podcast_itunes');?>">iTunes Link</a><?php endif; ?>
+      <?php if(get_field('podcast_rss_feed')): ?><a class="zocial rss icon" href="<?php the_field('podcast_rss_feed');?>">RSS Feed</a><?php endif; ?>
       <h3>Podcast Members who have joined PFCA</h3>
+      <ul class="member_list">
       <?php $args = array(
               'post_type' => 'pfca_member',
               'meta_query'		=> array(
@@ -35,6 +36,7 @@
               ?><li><a href="<?php echo get_permalink($member->ID) ?>"><?php echo get_the_title($member->ID);?></a></li><?php
             }
       ?>
+      </ul>
       <?php the_content(); ?>
     </div>
     <footer>
