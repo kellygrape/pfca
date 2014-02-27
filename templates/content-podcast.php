@@ -18,6 +18,23 @@
       <?php if(get_field('podcast_facebook')): ?><a class="zocial facebook" href="<?php the_field('podcast_facebook');?>">Facebook Link</a><br /><?php endif; ?>
       <?php if(get_field('podcast_itunes')): ?><a class="zocial itunes" href="<?php the_field('podcast_itunes');?>">iTunes Link</a><?php endif; ?>
       <?php if(get_field('podcast_rss_feed')): ?><a class="zocial rss" href="<?php the_field('podcast_rss_feed');?>">RSS Feed</a><br /><?php endif; ?>
+      <h3>Podcast Members who have joined PFCA</h3>
+      <?php $args = array(
+              'post_type' => 'pfca_member',
+              'meta_query'		=> array(
+                  array(
+                      'key' => 'member_podcast',
+                      'value' => '"' . get_the_ID() . '"',
+                      'compare' => 'LIKE'
+                      )
+                )
+            );
+            
+            $postslist = get_posts( $args );
+            foreach($postlist as $member){
+              print_r($member);
+            }
+      ?>
       <?php the_content(); ?>
     </div>
     <footer>
