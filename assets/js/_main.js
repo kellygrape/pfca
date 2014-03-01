@@ -18,11 +18,18 @@
 
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
-var Roots = {
+var PFCAjava = {
   // All pages
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $('#form_tg3atz22 input[type=submit]').on(click,function(){
+        var firstName = $('#field_w4111w').val();
+        var lastName = $('#field_768pbo').val();
+        if($('#field_k3tszg').val() === ''){
+          $('#field_k3tszg').val(firstName+' '+lastName);
+        }
+      });
     }
   },
   // Home page
@@ -43,7 +50,7 @@ var Roots = {
 // Add additional events for more control over timing e.g. a finalize event
 var UTIL = {
   fire: function(func, funcname, args) {
-    var namespace = Roots;
+    var namespace = PFCAjava;
     funcname = (funcname === undefined) ? 'init' : funcname;
     if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
       namespace[func][funcname](args);
