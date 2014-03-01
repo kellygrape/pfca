@@ -119,13 +119,24 @@ if($field->id == 121 || $field->id == 123 || $field->id == 169){ //replace 125 w
    foreach($posts as $p){
      $values['options'][$p->ID] = $p->post_title;
    }
-   if($field->id == 123){ $values['options'][0] = "My podcast is not listed."; }
+   if($field->id == 169){ $values['options']['none'] = "My podcast is not listed."; }
    $values['use_key'] = true; //this will set the field to save the post ID instead of post title
 }
 return $values;
 }
 
-
+// Create a redirect for the form based on if the user has selected "Podcast not listed"
+add_filter('frm_redirect_url', 'pfca_member_return_page', 9, 3);
+function pfca_member_return_page($url, $form, $params){
+  if($form->id == 13){ //change 5 to the ID of the form to redirect
+    $field_id = 169; //change 125 the the ID of the radio or dropdown field
+    if($_POST['item_meta'][$field_id] == 'none') 
+      $url = 'http://www.podcastingfilmcritics.org/podcast-registration';
+    else
+      $url = 'http://www.podcastingfilmcritics.org/member-next-steps';
+  }
+  return $url;
+}
 
 
 add_action( 'personal_options', array ( 'pfca_hide_user_info_things', 'start' ) );
