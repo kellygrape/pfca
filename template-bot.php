@@ -29,7 +29,7 @@ if( have_rows('board_members') ):
         </div>
         <div class="col-sm-9">
           <h3 class="board-member-name"><a href="<?php the_sub_field('board_name_link'); ?>"><?php the_sub_field('board_name'); ?></a></h3>
-          <p><a href="<?php the_sub_field('board_podcast_link'); ?>" class="member-podcast"><?php the_sub_field('board_podcast'); ?></a></p>
+          <p class="member-podcast"><a href="<?php the_sub_field('board_podcast_link'); ?>"><?php the_sub_field('board_podcast'); ?></a></p>
           <p><a href="<?php the_sub_field('board_email'); ?>"><i class="fa fa-envelope"></i> <?php the_sub_field('board_email'); ?></a></p>
         	<?php the_sub_field('position_responsibilities'); ?>
         
