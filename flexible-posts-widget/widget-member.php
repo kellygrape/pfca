@@ -24,6 +24,9 @@ if( $flexible_posts->have_posts() ):
     <?php endif; endif; ?>
     <div class="media-body">
       <h4 class="media-heading"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h4>
+      <p class="member-podcast"><?php $podcast = get_field('member_podcast'); ?>
+        <a href="<?php echo get_permalink($podcast->ID) ?>"><?php echo get_the_title($podcast->ID);?></a>
+      </p>
     </div>
   </li>
   <?php endwhile; ?>
