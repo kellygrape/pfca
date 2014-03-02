@@ -20,11 +20,10 @@ if( $flexible_posts->have_posts() ):
     <?php if( $thumbnail == true ): if( has_post_thumbnail() ): ?>
     <a class="pull-left" href="<?php echo the_permalink(); ?>">
       <?php the_post_thumbnail('widget-thumb',array('class' => 'media-object'));?>
+    </a>
     <?php endif; endif; ?>
     <div class="media-body">
-      <a href="<?php echo the_permalink(); ?>">
-      <h4 class="media-heading"><?php the_title(); ?></h4>
-      </a>
+      <h4 class="media-heading"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h4>
     </div>
   </li>
   <?php endwhile; ?>

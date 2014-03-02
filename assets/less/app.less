@@ -12,7 +12,10 @@
    ========================================================================== */
 
 body { 
-  background: url(../img/diagmonds/diagmonds.png) repeat;
+  //background: url(../img/diagmonds/diagmonds.png) repeat;
+  background-color: darken(@brand-primary,20%);
+  background-image: url(../img/darth-stripe.png);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 
@@ -178,7 +181,18 @@ footer.site-footer {
   p{margin: 0;}
 }
 
-
+.widget-podcasts, .widget-members{
+  li{
+    padding: 10px 0;
+    border-bottom: 1px dotted #ddd;
+  }
+  img{
+    padding: 1px;
+    border: 1px solid #ddd;
+    margin-top:-10px;
+    border-radius: 10px;
+  }
+}
 
 /* ==========================================================================
    WordPress Generated Classes
