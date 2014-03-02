@@ -30,7 +30,7 @@
     <footer>
       <?php
         global $current_user;
-        $current_user = get_currentuserinfo();
+        get_currentuserinfo();
         if ($post->post_author == $current_user->ID): ?>
         <a class="btn btn-info" href="/member-edit-profile/"><i class="fa fa-pencil"></i> Submit a change for this profile</a>
       <?php endif; ?>
