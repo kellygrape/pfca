@@ -17,7 +17,7 @@ if( have_rows('board_members') ):
         if( get_row_layout() == 'single_board_member' ):
         ?>
         <div class="row board-member">
-        <div class="col-sm-12"><h2><?php the_sub_field('board_title'); ?></h2></div>
+        <div class="col-sm-12"><h2><span><?php the_sub_field('board_title'); ?></span></h2></div>
         <div class="col-sm-3">
           <?php 
           $attachment_id = get_sub_field('board_photo');
