@@ -23,9 +23,17 @@
       <?php if(get_field('member_facebook')): ?>
         <a class="zocial facebook" href="<?php the_field('member_facebook');?>">Facebook Link</a>
       <?php endif; ?>
-      
+      <?php if(get_field('member_email')): ?>
+        <a class="zocial email" href="<?php the_field('member_email');?>">Email</a>
+      <?php endif; ?>
     </div>
     <footer>
+      <?php
+        global $current_user;
+        $current_user = get_currentuserinfo();
+        if ($post->post_author == $current_user->ID): ?>
+        <a class="btn btn-info" href="/member-edit-profile/"><i class="fa fa-pencil"></i> Submit a change for this profile</a>
+      <?php endif; ?>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>

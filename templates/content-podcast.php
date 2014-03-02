@@ -13,7 +13,7 @@
       <h3>Podcast Information</h3>
       <ul>
         <?php if(get_field('podcast_website')): ?><li><a href="<?php the_field('podcast_website'); ?>"><i class="fa fa-globe"></i> <?php the_field('podcast_website'); ?></a></li><?php endif; ?>
-        <?php if(get_field('podcast_email')): ?><li><a href="<?php the_field('podcast_email');?>"><i class="fa fa-envelope"></i><?php the_field('podcast_email'); ?></a></li><?php endif; ?>
+        <?php if(get_field('podcast_email')): ?><li><a href="<?php the_field('podcast_email');?>"><i class="fa fa-envelope"></i> <?php the_field('podcast_email'); ?></a></li><?php endif; ?>
         <?php if(get_field('podcast_first_broadcast')): ?><li><strong>Year of First Broadcast:</strong> <?php the_field('podcast_first_broadcast'); ?></li><?php endif; ?>
       </ul>
       <h3>Podcast Links</h3>
