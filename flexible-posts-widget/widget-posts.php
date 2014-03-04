@@ -30,6 +30,9 @@ if( $flexible_posts->have_posts() ):
 					}
 				?>
 				<h4 class="title"><?php the_title(); ?></h4>
+				<p class="byline"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="author"><?php echo get_the_author(); ?></a> / <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time>
+</p>
+
 			</a>
 		</li>
 	<?php endwhile; ?>
