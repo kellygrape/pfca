@@ -14,22 +14,29 @@ if ( !empty($title) )
 
 if( $flexible_posts->have_posts() ):
 ?>
-	<ul class="dpe-flexible-posts">
+	<ul class="dpe-flexible-posts recent-posts-widget">
 	<?php while( $flexible_posts->have_posts() ) : $flexible_posts->the_post(); global $post; ?>
 		<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<a href="<?php echo the_permalink(); ?>">
+			
 				<?php
 					if( $thumbnail == true ) {
 						// If the post has a feature image, show it
-						if( has_post_thumbnail() ) {
-							the_post_thumbnail( $thumbsize );
+						if( has_post_thumbnail() ) { ?>
+						<a href="<?php echo the_permalink(); ?>">
+						<?php the_post_thumbnail( $thumbsize ); ?>
+						</a>
+						<?php
 						// Else if the post has a mime type that starts with "image/" then show the image directly.
-						} elseif( 'image/' == substr( $post->post_mime_type, 0, 6 ) ) {
-							echo wp_get_attachment_image( $post->ID, $thumbsize );
+						} elseif( 'image/' == substr( $post->post_mime_type, 0, 6 ) ) { ?>
+						  <a href="<?php echo the_permalink(); ?>">
+  						<?php echo wp_get_attachment_image( $post->ID, $thumbsize ); ?>
+  						</a>
+							<?php
 						}
 					}
 				?>
-				<h4 class="title"><?php the_title(); ?></h4>
+				
+				<h4 class="title"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				<p class="byline"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="author"><?php echo get_the_author(); ?></a> / <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time>
 </p>
 
