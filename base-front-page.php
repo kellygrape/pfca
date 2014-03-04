@@ -32,7 +32,7 @@
         
           <!-- the loop -->
           <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-            <h2><?php the_title(); ?></h2>
+              <?php get_template_part('templates/content', get_post_format()); ?>
           <?php endwhile; ?>
           <!-- end of the loop -->
           <?php if ($wp_query->max_num_pages > 1) : ?>
