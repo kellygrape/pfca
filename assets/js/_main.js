@@ -23,13 +23,6 @@ var PFCAjava = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
-      $('#form_tg3atz22 input[type=submit]').on('click',function(){
-        var firstName = $('#field_w4111w').val();
-        var lastName = $('#field_768pbo').val();
-        if($('#field_k3tszg').val() === ''){
-          $('#field_k3tszg').val(firstName+' '+lastName);
-        }
-      });
     }
   },
   // Home page
