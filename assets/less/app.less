@@ -56,7 +56,7 @@ body {
 }
 .logo{
   a{
-    max-width:250px;
+    max-width:200px;
   }
   img{
     .img-responsive();
@@ -195,7 +195,10 @@ article.excerpt{
     border-radius: 0;
     header &{
       background-color:darken(@brand-primary,10%);
-      color:@footercolor;
+      color:#eee;
+      &:hover{
+        color:darken(@brand-primary,10%);
+      }
     }
   }
   .nav-pills>li>a{
