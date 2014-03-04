@@ -1,5 +1,5 @@
 <header class="banner navbar navbar-inverse container" role="banner">
-  <div class="row">
+  <div class="row logo-area">
     <div class="logo col-sm-4">
     <a href="/"><img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/pfca-logo4-black.png"></a>
     </div>
