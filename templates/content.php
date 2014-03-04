@@ -6,4 +6,5 @@
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div>
+  <footer class="excerpt-footer"></footer>
 </article>
