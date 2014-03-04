@@ -5,6 +5,12 @@
 function roots_widgets_init() {
   // Sidebars
   register_sidebar(array(
+    'name'          => __('Header Widget', 'roots'),
+    'id'            => 'header-widget',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+  ));
+  register_sidebar(array(
     'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',

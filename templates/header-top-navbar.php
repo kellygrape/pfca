@@ -1,7 +1,11 @@
-
 <header class="banner navbar navbar-inverse container" role="banner">
-  <div class="logo row">
+  <div class="row">
+    <div class="logo col-sm-4">
     <a href="/"><img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/pfca-logo4-black.png"></a>
+    </div>
+    <div class="header-widget col-sm-8">
+      <div class="col-md-4"><?php dynamic_sidebar('header-widget'); ?></div>
+    </div>
   </div>
   <div class="navbar-area row">
     <div class="navbar-header">
