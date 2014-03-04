@@ -55,7 +55,9 @@ body {
   padding: 15px 0;
 }
 .logo{
-  width: 25%;
+  a{
+    max-width:250px;
+  }
   img{
     .img-responsive();
   }
@@ -191,6 +193,10 @@ article.excerpt{
     background-color:lighten(@footercolor,40%);
     color:@footercolor;
     border-radius: 0;
+    header &{
+      background-color:darken(@brand-primary,10%);
+      color:@footercolor;
+    }
   }
   .nav-pills>li>a{
     border-radius: 0;

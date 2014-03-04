@@ -4,7 +4,7 @@
     <a href="/"><img src="<?php echo get_stylesheet_directory_uri();?>/assets/img/pfca-logo4-black.png"></a>
     </div>
     <div class="header-widget col-sm-8">
-      <div class="col-md-4"><?php dynamic_sidebar('header-widget'); ?></div>
+      <?php dynamic_sidebar('header-widget'); ?>
     </div>
   </div>
   <div class="navbar-area row">
