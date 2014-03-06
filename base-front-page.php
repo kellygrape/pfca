@@ -21,7 +21,7 @@
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
-        <h2 class="divider">Posts</h2>
+        <h2 class="divider"><span>Posts</span></h2>
         <?php 
         // the query
         $the_query = new WP_Query( array('post_type' => 'post') ); ?>
