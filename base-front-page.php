@@ -21,7 +21,7 @@
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
-        <h3>Posts</h3>
+        <h2 class="divider">Posts</h2>
         <?php 
         // the query
         $the_query = new WP_Query( array('post_type' => 'post') ); ?>
@@ -29,10 +29,24 @@
         <?php if ( $the_query->have_posts() ) : ?>
         
           <!-- pagination here -->
-        
+          <?php $i = 0 ; ?>
           <!-- the loop -->
           <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-              <?php get_template_part('templates/content', get_post_format()); ?>
+             <?php if(is_sticky()): ?>
+                <article <?php post_class('sticky'); ?>>
+                  <header>
+                    <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php get_template_part('templates/entry-meta'); ?>
+                  </header>
+                  <div class="entry-summary">
+                    <?php the_content(); ?>
+                  </div>
+                  <footer class="excerpt-footer"></footer>
+                </article>
+
+             <?php else: ?>
+                <?php get_template_part('templates/content', get_post_format()); ?>
+             <?php endif; ?>
           <?php endwhile; ?>
           <!-- end of the loop -->
           <?php if ($wp_query->max_num_pages > 1) : ?>
