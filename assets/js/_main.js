@@ -23,6 +23,7 @@ var PFCAjava = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      $('.post-type-archive .menu-newseditorials').removeClass('active');
     }
   },
   // Home page
