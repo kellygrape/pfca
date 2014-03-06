@@ -11,8 +11,8 @@
       <h3>Member Information</h3>
       <ul>
         <?php if(get_field('member_journalism_alias')): ?><li><strong>Journalism Alias</strong> <?php the_field('member_journalism_alias'); ?></li><?php endif; ?>        
-        <?php $podcast = get_field('member_podcast'); ?>
-        <li><strong>Podcast</strong> <a href="<?php echo get_permalink($podcast->ID) ?>"><?php echo get_the_title($podcast->ID);?></a></li>
+        <?php $podcast = get_post_meta( get_the_ID(), 'member_podcast', true ); ?>
+        <li><strong>Podcast</strong> <a href="<?php echo get_permalink($podcast) ?>"><?php echo get_the_title($podcast);?></a></li>
         <?php if(get_field('member_title')): ?><li><strong>Title</strong> <?php the_field('member_title'); ?></li><?php endif; ?>
       </ul>
       <?php the_content(); ?>

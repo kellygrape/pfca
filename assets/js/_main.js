@@ -24,6 +24,8 @@ var PFCAjava = {
     init: function() {
       // JavaScript to be fired on all pages
       $('.post-type-archive .menu-newseditorials').removeClass('active');
+      $('.single-pfca_member .menu-newseditorials').removeClass('active');
+      $('.single-pfca_podcast .menu-newseditorials').removeClass('active');
     }
   },
   // Home page
