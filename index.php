@@ -9,7 +9,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
   <?php if ( 'pfca_podcast' == get_post_type() ): ?>
-    <?php get_template_part('templates/excerpt', 'podcast'; ?>
+    <?php get_template_part('templates/excerpt', 'podcast'); ?>
   <?php elseif ( 'pfca_member' == get_post_type() ): ?>
     <?php get_template_part('templates/content', get_post_format()); ?>
   <?php else: ?>
