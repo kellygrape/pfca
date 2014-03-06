@@ -58,9 +58,9 @@ add_action( 'init', 'pfca_member', 0 );
 function pfca_podcast() {
 
 	$labels = array(
-		'name'                => _x( 'Podcast', 'Post Type General Name', 'text_domain' ),
+		'name'                => _x( 'Podcasts', 'Post Type General Name', 'text_domain' ),
 		'singular_name'       => _x( 'Podcast', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'           => __( 'Podcast', 'text_domain' ),
+		'menu_name'           => __( 'Podcasts', 'text_domain' ),
 		'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
 		'all_items'           => __( 'All Items', 'text_domain' ),
 		'view_item'           => __( 'View Item', 'text_domain' ),
