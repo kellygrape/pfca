@@ -5,7 +5,9 @@
     </a>
     <div class="media-body">
       <h3 class="media-heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-      <?php the_content(); ?>
+      <p>     
+        <?php $podcast = get_field('member_podcast'); ?>
+        <?php the_field('member_title'); ?>, <a href="<?php echo get_permalink($podcast->ID) ?>"><?php echo get_the_title($podcast->ID);?></a></p>
     </div>
   </div>
 </article>
